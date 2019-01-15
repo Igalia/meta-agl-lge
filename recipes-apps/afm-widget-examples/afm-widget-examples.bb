@@ -11,7 +11,7 @@ RDEPENDS_${PN} = "virtual/webruntime"
 
 PR = "r0"
 
-SRC_URI = "git://github.com/jaragunde/wam-demo-applications.git;branch=master"
+SRC_URI = "git://github.com/jaragunde/wam-demo-applications.git;branch=ces-demo"
 
 S = "${WORKDIR}/git"
 SRCREV = "${AUTOREV}"
