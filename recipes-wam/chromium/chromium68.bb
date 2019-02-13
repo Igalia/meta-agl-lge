@@ -26,15 +26,15 @@ DEPENDS = "virtual/gettext wayland wayland-native pixman freetype fontconfig ope
 PROVIDES = "${BROWSER_APPLICATION}"
 
 SRC_URI = "\
-    git://github.com/webosose/${PN};branch=@15.agl.flounder;protocol=https \
-    git://github.com/webosose/v8;destsuffix=git/src/v8 \
+    git://github.com/webosose/${PN};branch=@15.agl.flounder;protocol=https;rev=${SRCREV_chromium68} \
+    git://github.com/webosose/v8;destsuffix=git/src/v8;rev=${SRCREV_v8} \
 "
-SRCREV="${AUTOREV}"
+SRCREV_chromium68 = "eca3bd2ef74093d1fabbd6bbcd4dd9e2ccefce4b"
+SRCREV_v8 = "f9a5f6866468097293e02fd0fec5fe297ecaecdc"
 
 ## we don't include SRCPV in PV, so we have to manually include SRCREVs in do_fetch vardeps
 WEBOS_VERSION_V8 = "6.8.275.26-2_a8559356cc7652b77913e47f681ee126b97e8eaf"
 do_fetch[vardeps] += "SRCREV_v8"
-SRCREV_v8 = "d7b77ff7d9178acc5f6f84d27f56c0e714d28e7a"
 SRCREV_FORMAT = "main_v8"
 
 S = "${WORKDIR}/git"
